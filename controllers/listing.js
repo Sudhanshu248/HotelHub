@@ -1,5 +1,13 @@
 const Listing = require("../models/listing");
 
+module.exports.BookNow = async(req ,res)=>{
+    let {id} = req.params;
+   
+    req.flash("success" , "Booking Successfully");
+  
+    res.redirect(`/listings/${id}`);
+}
+
 module.exports.renderIndex =async(req , res)=>{
     const allListing =  await Listing.find({});
      res.render("listings/index.ejs" , {allListing});

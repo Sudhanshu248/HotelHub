@@ -36,8 +36,10 @@
 </div>
 
 <!-- Delete or Edits  -Section -->
-<!--<% if(currUser && currUser._id.equals(listing.owner._id)){ %> -->
-    <div class="btns mt-3 ">
+
+
+     <% if(currUser && currUser._id.equals(listing.owner._id)){ %> 
+        <div class="btns mt-3 ">
 
         <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark edit-btn col-1 offset-3">Edit</a>
         
@@ -46,7 +48,18 @@
         </form>
     </div>
     <% } %>
-<!-- -->
+    
+    <% if (currUser) {%>
+        <form method="post" action="/listings/<%= listing._id %>">
+        <div class="d-flex justify-content-center">
+
+                <button class="btn btn-success w-50 m-3">Book Now</button>
+            </div>
+        </form>
+        <%  }%>
+        
+ 
+
 <!-- Review Section  -->
 <% if(currUser){ %>
 <div class="col-8 offset-3 mb-3 mt-2">

@@ -28,7 +28,8 @@ router.get("/new" , isloggedIn ,ListingController.renderNewListing);
 router.route("/:id")
 .get( wrapAsync(ListingController.renderShowListing))
 .put(isloggedIn , isOwner,upload.single('listing[image]'),validatelisting ,wrapAsync(ListingController.UpdateListing))
-.delete(isloggedIn, isOwner ,wrapAsync( ListingController.DestroyListing));
+.delete(isloggedIn, isOwner ,wrapAsync( ListingController.DestroyListing))
+.post(isloggedIn , wrapAsync(ListingController.BookNow));
 
 
 router.get("/:id/edit",isloggedIn , isOwner, wrapAsync( ListingController.renderEditListing));
