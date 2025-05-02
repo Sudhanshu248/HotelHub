@@ -1,8 +1,17 @@
 const Listing = require("../models/listing");
 
+module.exports.renderBooking = async(req ,res)=>{
+    let {id} = req.params;
+    let listing = await Listing.findById(id);
+    req.flash("success" , "Booking Successfully");
+    res.render("listings/book.ejs" , {listing});
+}
+
 module.exports.BookNow = async(req ,res)=>{
     let {id} = req.params;
-   
+   let listing = await Listing.findById(id);
+   listing.booking.push(req.user._id);
+   await listing.save();
     req.flash("success" , "Booking Successfully");
   
     res.redirect(`/listings/${id}`);

@@ -110,6 +110,14 @@
                 <button class="btn btn-dark btn1"> <a class="nav-link text-white" href="/logout">LogOut</a></button>
               </li>
               <% } %>
+
+              <% if(currUser) {%>
+                <li class="nav-item">
+                  <button class="btn btn-dark btn1">
+                     <a class="nav-link text-white" href="/">Bookings</a>
+                    </button>
+                </li>
+              <% } %>
       </ul>
     </div>
   </div>

@@ -33,6 +33,7 @@ router.route("/:id")
 
 
 router.get("/:id/edit",isloggedIn , isOwner, wrapAsync( ListingController.renderEditListing));
-
-
+router
+.get("/:id/book" , isloggedIn , ListingController.renderBooking)
+.post("/:id/book" , isloggedIn , ListingController.BookNow);
 module.exports = router;

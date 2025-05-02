@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 const Review =require("./review");
 const { string } = require("joi");
 
+
+
+
+
 let listingSchema = new Schema({
     title:{
         type:String ,
@@ -37,6 +41,13 @@ let listingSchema = new Schema({
         type:Schema.Types.ObjectId , 
         ref: "User"
     },
+
+    booking:[
+        {
+            type:Schema.Types.ObjectId,
+            ref:"Booking"
+        }
+    ]   
 });
 
 listingSchema.post("findOneAndDelete" , async(listing)=>{
