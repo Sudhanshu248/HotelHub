@@ -10,7 +10,7 @@ const {
 } = require("../middleware.js");
 const listingController = require("../controllers/listings.js");
 const multer = require("multer");
-const { storage } = require("../cloudConfig.js");
+const { storage } = require("../../cloudConfig.js");
 const upload = multer({
   storage: storage,
   // limits: { fileSize: 1024 * 1024 }, // 1MB limit

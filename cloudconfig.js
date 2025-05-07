@@ -10,7 +10,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "wanderlust_DEV",
+    folder: "new_folder_name",
     allowedFormats: ["png", "jpg", "jpeg"],
     public_id: (req, file) => {
       const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
