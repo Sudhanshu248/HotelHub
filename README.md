@@ -31,6 +31,7 @@ HotelHub is a web application designed to simplify hotel booking and management.
 4. **Booking**:
    - Once logged in, users can book a hotel room, view their booking history, and manage reservations.
 
+---
 
 <h1>🛠️ Tech Stack</h1>
 
@@ -72,6 +73,8 @@ HotelHub is a web application designed to simplify hotel booking and management.
    ```bash
    node app.js
    ```
+
+---
 
 <h1>🌐 Live Demo</h1>
 
